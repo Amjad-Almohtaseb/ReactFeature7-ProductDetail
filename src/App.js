@@ -25,14 +25,30 @@ const theme = {
 };
 
 function App() {
-  const [product, setProduct] = useState(null);
-  const newSet = () => {
-    // setProduct(product);
+  const [_products, setProducts] = useState(products);
+  const deleteProduct = (productId) => {
+    _products.filter((product) => product.id !== productId);
   };
+
+  const [product, setProduct] = useState(null);
+
   const setView = () => {
     if (product)
-      return <ProductDetail product={product} setProduct={setProduct} />;
-    else return <ProductList setProduct={setProduct} setProduct={setProduct} />;
+      return (
+        <ProductDetail
+          product={product}
+          setProduct={setProduct}
+          deleteProduct={deleteProduct}
+        />
+      );
+    else
+      return (
+        <ProductList
+          setProduct={setProduct}
+          products={_products}
+          deleteProduct={deleteProduct}
+        />
+      );
   };
 
   const [currentTheme, setCurrentTheme] = useState("light");

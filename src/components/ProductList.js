@@ -7,6 +7,7 @@ import SearchBar from "./SearchBar";
 // Data
 import products from "../products";
 import { useState } from "react";
+// import ProductItem from "./ProductItem";
 
 const ProductList = (props) => {
   const [query, setQuery] = useState("");
@@ -18,6 +19,7 @@ const ProductList = (props) => {
         product={product}
         key={product.id}
         setProduct={props.setProduct}
+        deleteProduct={props.deleteProduct}
       />
     ));
 
