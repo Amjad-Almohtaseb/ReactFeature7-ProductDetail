@@ -77,4 +77,6 @@ export const Title = styled.h1`
   text-align: center;
 `;
 
-export const DeleteButtonStyled = styled.button``;
+export const DeleteButtonStyled = styled.button`
+
+`;
